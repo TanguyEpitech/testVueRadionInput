@@ -5,7 +5,7 @@
 
 </div>
   <div class=" grid">
-    <div  class="border radio"    @click="click" v-for="item in items"    :key="item.ind" :aria-valuenow="item.ind " >{{item.ind}}</div>
+    <div  class="border radio"    @click="click" v-for="item in items" :id="item.ind" :key="item.ind" >{{item.ind}}</div>
   </div>
 
 
@@ -32,25 +32,32 @@ export default {
   }
   ,
   methods: {
+send(param) {
 
+  return param},
 
 
     check (e) {
 
-     console.log( this.items[3].ind)
-
 
       for (let i = 0; i <this.items.length; i++) {
-console.log(e.target.ariaValueNow)
-        if(this.items[i].ind === e.target.ariaValueNow) {
+
+        document.querySelector(".grid").children[i].style.backgroundColor="green"
+
+        if(this.items[i].ind === e.target.id) {
+          document.querySelector(".grid").children[i].style.backgroundColor="red !important"
+console.log(e.target)
+
+
           this.error = false;
 
-
           if(this.error === false ) {
-console.log(this.error)
-            this.message = "";
 
+            this.message = "";
+            this.send(e.target.id)
           }
+
+
         }
         else {
           this.error = true;
@@ -61,6 +68,7 @@ console.log(this.error)
           }
         }
 
+        e.target.style.backgroundColor="white"
 
       }
 
