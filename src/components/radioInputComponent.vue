@@ -33,7 +33,7 @@ export default {
   ,
   methods: {
 send(param) {
-
+console.log('envoyé')
   return param},
 
 
@@ -42,13 +42,9 @@ send(param) {
 
       for (let i = 0; i <this.items.length; i++) {
 
-        document.querySelector(".grid").children[i].style.backgroundColor="green"
+        document.querySelector(".grid").children[i].style.backgroundColor="white"
 
         if(this.items[i].ind === e.target.id) {
-          document.querySelector(".grid").children[i].style.backgroundColor="red !important"
-console.log(e.target)
-
-
           this.error = false;
 
           if(this.error === false ) {
@@ -56,8 +52,6 @@ console.log(e.target)
             this.message = "";
             this.send(e.target.id)
           }
-
-
         }
         else {
           this.error = true;
@@ -67,8 +61,7 @@ console.log(e.target)
 
           }
         }
-
-        e.target.style.backgroundColor="white"
+        e.target.style.backgroundColor="#458FFF"
 
       }
 
@@ -109,20 +102,20 @@ console.log(e.target)
 }
 .border {
   border: 1px solid blue;
-  padding: 5px 10px;
+  padding: 8px 16px;
 }
 
 .grid {
 
   border-radius: 4px;
-  border: 1px solid blue;
+  border: 1px solid #BBBFC3;
   margin: auto;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  max-width: 230px;
+  max-width: 277px;
   justify-content: center;
-  min-width: 230px;
+  min-width: 277px;
 
 }
 
