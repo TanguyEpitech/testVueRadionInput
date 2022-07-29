@@ -33,8 +33,11 @@ export default {
   ,
   methods: {
 send(param) {
-console.log('envoyé')
-  return param},
+  this.$emit(param)
+console.log('envoyé' + param)
+  return param
+
+},
 
 
     check (e) {
