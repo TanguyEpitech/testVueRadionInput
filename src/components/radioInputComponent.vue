@@ -5,7 +5,7 @@
 
 </div>
   <div class=" grid">
-    <div  class="border radio"    @click="click" v-for="item in items" :id="item.ind" :key="item.ind" >{{item.ind}}</div>
+    <div  class="border radio"   @click="click" v-for="item in items" :id="item.ind" :key="item.ind"  >{{item.ind}}</div>
   </div>
 
 
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+
 export default {
   name: "RadioInputComponent",
   data() {
@@ -33,8 +34,7 @@ export default {
   ,
   methods: {
 send(param) {
-  this.$emit(param)
-console.log('envoyé' + param)
+  this.$emit("customChange",param)
   return param
 
 },

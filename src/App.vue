@@ -1,18 +1,25 @@
 <template>
 
 
-  <radio-input-component></radio-input-component>
-
+  <radio-input-component @customChange="callback"/>
 </template>
 
 <script>
 
 import RadioInputComponent from "@/components/radioInputComponent";
 export default {
+  callback : "",
   name: 'App',
   components: {
     RadioInputComponent
 
+  },
+
+
+  methods : {
+    callback(event) {
+      console.log(event)
+    }
   }
 }
 </script>
